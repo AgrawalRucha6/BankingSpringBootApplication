@@ -2,7 +2,7 @@
   hosts : kubernetes
   tasks :  
   - name: Get nodes 
-    command: "kubectl get nodes"
+    raw: "kubectl get nodes"
     register: nodeoutput
         
   - name: Remove Existing Container
