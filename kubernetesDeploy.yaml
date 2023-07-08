@@ -12,6 +12,13 @@
         - openshift
         - pyyaml
         - kubernetes 
+        
+  - name: get pwd value
+    command: pwd
+    register: pwdout
+  - name: display pwd output
+    debug:
+      msg: "{{ pwdout }}"
       
   - name: Create namespace
     register: creatensoutput
