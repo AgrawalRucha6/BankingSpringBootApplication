@@ -17,6 +17,7 @@
     register: creatensoutput
     k8s:
       kubeconfig: $HOME/.kube/config
+      context: kubernetes-admin@kubernetes
       name: sample
       api_version: v1
       kind: Namespace
