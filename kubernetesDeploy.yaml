@@ -1,17 +1,14 @@
 ---
 - name : Deploy Pods on Docker Container
   hosts : kubernetes
-  tasks :  
-  - name: Get nodes 
-    raw: "kubectl get nodes"
-    register: nodeoutput
-    ignore_errors: true
-    
+  tasks :    
   - name: Create namespace
-    raw: "kubectl create ns sample"
-    register: nsoutput
-    ignore_errors: true
-        
+    k8s:
+      name: sample
+      api_version: v1
+      kind: Namespace
+      state: present
+            
   - name: Remove Existing Container
     command: "kubectl delete deployment {{ containerName }} -ns sample"
     ignore_errors: true
