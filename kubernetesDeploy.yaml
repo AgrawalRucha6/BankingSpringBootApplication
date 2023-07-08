@@ -19,6 +19,13 @@
   - name: display pwd output
     debug:
       msg: "{{ pwdout }}"
+
+  - name: change dir
+    command: chdir=$HOME
+    register: cdout
+  - name: display cd output
+    debug:
+      msg: "{{ cdout }}"
       
   - name: Create namespace
     register: creatensoutput
