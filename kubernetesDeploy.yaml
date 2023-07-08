@@ -2,7 +2,7 @@
   hosts : kubernetes
   tasks : 
   - name: sample task
-    command: ping localhost
+    command: ping 
     
   - name: Remove Existing Container
     command: "kubectl delete deployment {{ containerName }}"
