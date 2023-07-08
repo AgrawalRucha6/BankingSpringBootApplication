@@ -1,9 +1,6 @@
 - name : Deploy Pods on Docker Container
   hosts : kubernetes
-  tasks : 
-  - name: sample task
-    command: ping 
-    
+  tasks :  
   - name: Remove Existing Container
     command: "kubectl delete deployment {{ containerName }}"
     ignore_errors: true
