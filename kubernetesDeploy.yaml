@@ -21,7 +21,7 @@
       msg: "{{ pwdout }}"
 
   - name: change dir
-    command: chdir=$HOME
+    command: chdir=$HOME ls
     register: cdout
   - name: display cd output
     debug:
