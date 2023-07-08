@@ -1,7 +1,14 @@
 ---
 - name : Deploy Pods on Docker Container
   hosts : kubernetes
-  tasks :    
+  tasks :  
+  - name: install pre-requisites
+    pip:
+    name:
+      - openshift
+      - pyyaml
+      - kubernetes 
+      
   - name: Create namespace
     k8s:
       name: sample
