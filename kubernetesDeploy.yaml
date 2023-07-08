@@ -1,5 +1,5 @@
 - name : Deploy Pods on Docker Container
   hosts : kubernetes
   tasks : 
-   - name: Get Container List
+  - name: Get Container List
     command: "kubectl get pods -o wide"
