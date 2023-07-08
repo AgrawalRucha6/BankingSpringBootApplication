@@ -3,6 +3,7 @@
   hosts : kubernetes
   tasks :  
   - name: install pre-requisites
+    register: pre-reqoutput
     pip:
       name:
         - openshift
@@ -10,6 +11,7 @@
         - kubernetes 
       
   - name: Create namespace
+    register: creatensoutput
     k8s:
       name: sample
       api_version: v1
