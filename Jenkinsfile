@@ -41,7 +41,7 @@ node{
     }    
 	
 	stage('Ansible Playbook Execution'){
-		sh "ansible-playbook -i inventory.yaml kubernetesDeploy.yaml -e K8S_AUTH_KUBECONFIG=/home/agrawalruchagma/.kube/config -e httpPort=$httpPort -e containerName=$containerName -e dockerImageTag=$dockerHubUser/$containerName:$tag"
+		sh "ansible-playbook -i inventory.yaml kubernetesDeploy.yaml -e K8S_AUTH_KUBECONFIG=/etc/kubernetes/admin.conf -e httpPort=$httpPort -e containerName=$containerName -e dockerImageTag=$dockerHubUser/$containerName:$tag"
 	}
 }
 
