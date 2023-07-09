@@ -24,15 +24,10 @@
   - name: Echo my_env_var
     command: "echo $K8S_AUTH_KUBECONFIG"
     ignore_errors: true
-      
-  - name: copy config
-    copy:
-      src: $HOME/.kube/config
-      dest: .
-      register: copyout
-  - name: display copy config output
+    register: envout
+  - name: display env var output
     debug:
-      msg: "{{ copyout }}"
+      msg: "{{ envout }}"
       
   - name: Create namespace
     register: creatensoutput
