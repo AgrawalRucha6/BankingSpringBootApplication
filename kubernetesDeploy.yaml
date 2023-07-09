@@ -20,12 +20,7 @@
     debug:
       msg: "{{ pwdout }}"
 
-  - name: change dir
-    command: chdir=$HOME ls
-    register: cdout
-  - name: display cd output
-    debug:
-      msg: "{{ cdout }}"
+
       
   - name: Create namespace
     register: creatensoutput
