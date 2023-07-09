@@ -4,6 +4,8 @@
   connection: local
   gather_facts: false
   remote_user: kubernetes-admin
+  environment:
+    K8S_AUTH_KUBECONFIG: /etc/kubernetes/admin.conf
   tasks :  
   - name: install pre-requisites
     register: prereqoutput
@@ -19,6 +21,10 @@
   - name: display pwd output
     debug:
       msg: "{{ pwdout }}"
+
+  - name: Echo my_env_var
+      shell: "echo $K8S_AUTH_KUBECONFIG"
+      
   - name: copy config
     copy:
       src: $HOME/.kube/config
