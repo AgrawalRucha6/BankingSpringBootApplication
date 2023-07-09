@@ -22,7 +22,7 @@
       msg: "{{ pwdout }}"
 
   - name: Echo my_env_var
-    command: "echo $K8S_AUTH_KUBECONFIG"
+    command: "echo "{{$K8S_AUTH_KUBECONFIG}}
     ignore_errors: true
     register: envout
   - name: display env var output
