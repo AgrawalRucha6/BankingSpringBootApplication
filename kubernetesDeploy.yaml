@@ -20,9 +20,9 @@
     debug:
       msg: "{{ pwdout }}"
   - name: copy config
-      copy:
-        src: $HOME/.kube/config
-        dest: .
+    copy:
+      src: $HOME/.kube/config
+      dest: .
       register: copyout
   - name: display copy config output
     debug:
