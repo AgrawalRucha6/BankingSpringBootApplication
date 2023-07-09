@@ -3,8 +3,7 @@
   hosts : kubernetes
   connection: local
   gather_facts: false
-  remote_user: kubernetes-admin
-  
+    
   tasks :  
   - name: install pre-requisites
     register: prereqoutput
