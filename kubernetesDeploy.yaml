@@ -22,9 +22,10 @@
       msg: "{{ pwdout }}"
 
   - name: Echo my_env_var
-    command: "echo "{{$K8S_AUTH_KUBECONFIG}}
-    ignore_errors: true
+    command: "echo $K8S_AUTH_KUBECONFIG"
     register: envout
+    environment:
+      K8S_AUTH_KUBECONFIG: /etc/kubernetes/admin.conf
   - name: display env var output
     debug:
       msg: "{{ envout }}"
